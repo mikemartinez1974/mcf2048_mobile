@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/www/spec" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/platforms" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -12,5 +13,6 @@
     <orderEntry type="library" name="phonegap-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="cordova-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="Node.js v4.2.1 Core Modules" level="application" />
+    <orderEntry type="library" name="jGestures" level="application" />
   </component>
 </module>

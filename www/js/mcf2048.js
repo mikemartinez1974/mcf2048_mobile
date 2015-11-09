@@ -2,8 +2,10 @@
 
 /* global TweenLite */
 /* global TimelineLite */
+/* global console */
 /* global $c */
 /* global $ */
+
 $(function () {
 
     "use strict";
@@ -365,10 +367,32 @@ $(function () {
             this.attachInputEvents();
         }
     };
+
+
     GameBoard.prototype.attachInputEvents = function () {
         $(document).keydown($.proxy(function (event) {
             this.onKeyDown(event);
         }, gameBoard));
+
+        $(document).bind("swipeUp" , function () {
+            alert("swipeUp");
+           this.onKeyDown({keyCode:37});
+        });
+
+        $(document).bind("swipeLeft" , function () {
+            alert("swipeLeft");
+            this.onKeyDown({keyCode:38});
+        });
+
+        $(document).bind("swipeDown" , function () {
+            alert("swipeDown");
+            this.onKeyDown({keyCode:39});
+        });
+
+        $(document).bind("swipeRight" , function () {
+            alert("swipeRight");
+            this.onKeyDown({keyCode:40});
+        });
     };
     GameBoard.prototype.onKeyDown = function (event) {
         var undoWasPlayed = false;
@@ -436,7 +460,14 @@ $(function () {
     GameBoard.prototype.removeInputEvents = function () {
 
         $(document).unbind("keydown");
+        $(document).unbind("swipeUp");
+        $(document).unbind("swipeLeft");
+        $(document).unbind("swipeDown");
+        $(document).unbind("swipeRight");
+
     };
+
+
     GameBoard.prototype.moveTiles = function (direction) {
         var r, c;
         var matrixLength = this.matrix.length;
@@ -500,7 +531,7 @@ $(function () {
         if (adjacentSpace) {
             if (adjacentTile) {
                 if (thisTile) {
-                    if (thisTile.value == adjacentTile.value) {
+                    if (thisTile.value == adjacentTile.value) { // jshint ignore:line
                         //merge tiles
                         if (thisTile.hasMerged === false && adjacentTile.hasMerged === false) {
                             adjacentTile.space = thisSpace;
@@ -656,7 +687,7 @@ $(function () {
                         options += 1;
                     }
                     if (thisSpace.hasTile && adjacentSpace.hasTile) {
-                        if (thisTile.value == adjacentTile.value) {
+                        if (thisTile.value == adjacentTile.value) { // jshint ignore:line
                             options += 1;
                         }
                     }
@@ -675,7 +706,7 @@ $(function () {
                         options += 1;
                     }
                     if (thisSpace.hasTile && adjacentSpace.hasTile) {
-                        if (thisTile.value == adjacentTile.value) {
+                        if (thisTile.value == adjacentTile.value) { // jshint ignore:line
                             options += 1;
                         }
                     }
@@ -694,7 +725,7 @@ $(function () {
                         options += 1;
                     }
                     if (thisSpace.hasTile && adjacentSpace.hasTile) {
-                        if (thisTile.value == adjacentTile.value) {
+                        if (thisTile.value == adjacentTile.value) { // jshint ignore:line
                             options += 1;
                         }
                     }
@@ -713,7 +744,7 @@ $(function () {
                         options += 1;
                     }
                     if (thisSpace.hasTile && adjacentSpace.hasTile) {
-                        if (thisTile.value == adjacentTile.value) {
+                        if (thisTile.value == adjacentTile.value) { // jshint ignore:line
                             options += 1;
                         }
                     }
@@ -751,6 +782,7 @@ $(function () {
     //};
 
 
+
     //object
     var tileFactory = {
         animateDuration: 0.25,
@@ -779,7 +811,7 @@ $(function () {
             aNewTile.factory = this;
 
             if (value === undefined) {
-                if (Math.round(2 * Math.random() + 1) == 2) {
+                if (Math.round(2 * Math.random() + 1) == 2) { // jshint ignore:line
                     aNewTile.value = 4;
                 }
                 else {
@@ -802,7 +834,7 @@ $(function () {
             if (isNaN(value) && (value != null)) {
                 var values = aNewTile._values;
                 var index = values.indexOf(value);
-                if (index != -1) {
+                if (index != -1) { // jshint ignore:line
                     aNewTile.size = values.indexOf(value);
                 }
                 else {
@@ -883,7 +915,7 @@ $(function () {
             },
             set: function (newSpace) {
                 if (newSpace instanceof GameSpace) {
-                    if (this.space && this.space.id == newSpace.id) {
+                    if (this.space && this.space.id == newSpace.id) { // jshint ignore:line
                         return;
                     }
                     if (this.space) {
