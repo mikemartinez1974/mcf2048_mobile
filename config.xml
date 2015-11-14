@@ -12,7 +12,7 @@
         <!ATTLIST author
                 email CDATA #REQUIRED
                 href CDATA #REQUIRED>
-        <!ELEMENT content (#PCDATA)>C:\Program Files (x86)\PhoneGap\PhoneGap Desktop
+        <!ELEMENT content (#PCDATA)>
         <!ATTLIST content
                 src CDATA #REQUIRED>
         <!ELEMENT preference (#PCDATA)>
