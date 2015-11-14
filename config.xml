@@ -12,7 +12,7 @@
         <!ATTLIST author
                 email CDATA #REQUIRED
                 href CDATA #REQUIRED>
-        <!ELEMENT content (#PCDATA)>
+        <!ELEMENT content (#PCDATA)>C:\Program Files (x86)\PhoneGap\PhoneGap Desktop
         <!ATTLIST content
                 src CDATA #REQUIRED>
         <!ELEMENT preference (#PCDATA)>
@@ -52,7 +52,7 @@
         <!ATTLIST platform
                 name CDATA #REQUIRED>
         ]>
-<widget xmlns:gap="http://phonegap.com/ns/1.0" id="com.martinezcrimefamily.2048" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
+<widget xmlns:gap="http://phonegap.com/ns/1.0" id="com.martinezcrimefamily.tilegamea" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
     <name>2048</name>
     <description>
         A clone of the game 2048.

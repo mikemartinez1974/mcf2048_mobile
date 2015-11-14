@@ -10,6 +10,13 @@ $(function () {
 
     "use strict";
 
+    function scale(value)
+    {
+        var multiplier = 0.85;
+
+        return value * multiplier;
+    }
+
     //object
     function GameObject() {
     }
@@ -226,6 +233,7 @@ $(function () {
 
     //object
     function GameBoard(id) {
+
         //GameObject.call(this);
         this.type = "GameBoard";
         this.id = id || "Board1";
@@ -236,7 +244,7 @@ $(function () {
             configurable: true,
             enumerable: true,
             get: function () {
-                return _tileSize;
+                return scale(_tileSize);
             },
             set: function (val) {
                 _tileSize = val;
@@ -370,29 +378,58 @@ $(function () {
 
 
     GameBoard.prototype.attachInputEvents = function () {
-        $(document).keydown($.proxy(function (event) {
-            this.onKeyDown(event);
-        }, gameBoard));
 
-        $(document).bind("swipeUp" , function () {
-            alert("swipeUp");
-           this.onKeyDown({keyCode:37});
+        $("body").on("keydown", function() {
+           gameBoard.onKeyDown(event);
         });
 
-        $(document).bind("swipeLeft" , function () {
-            alert("swipeLeft");
-            this.onKeyDown({keyCode:38});
-        });
+        //$("body").bind("swipeone", function(){ alert("swipe"); });
+        //
+        //$("body").bind("swipeup" , function () {
+        //    //alert("swipeUp");
+        //    //this.onKeyDown({keyCode:37});
+        //    gameBoard.onKeyDown({keyCode:37});
+        //});
+        //
+        //$("body").bind("swipeleft" , function () {
+        //    //alert("swipeLeft");
+        //    gameBoard.onKeyDown({keyCode:38});
+        //});
+        //
+        //$("body").bind("swipedown" , function () {
+        //    //alert("swipeDown");
+        //    gameBoard.onKeyDown({keyCode:39});
+        //});
+        //
+        //$("body").bind("swiperight" , function () {
+        //    //alert("swipeRight");
+        //    gameBoard.onKeyDown({keyCode:40});
+        //});
 
-        $(document).bind("swipeDown" , function () {
-            alert("swipeDown");
-            this.onKeyDown({keyCode:39});
-        });
-
-        $(document).bind("swipeRight" , function () {
-            alert("swipeRight");
-            this.onKeyDown({keyCode:40});
-        });
+        //$(document).keydown($.proxy(function (event) {
+        //    this.onKeyDown(event);
+        //}, gameBoard));
+        //
+        //$(document).bind("swipeUp" , function () {
+        //    alert("swipeUp");
+        //   //this.onKeyDown({keyCode:37});
+        //    gameBoard.onKeyDown({keyCode:37});
+        //});
+        //
+        //$(document).bind("swipeLeft" , function () {
+        //    alert("swipeLeft");
+        //    this.onKeyDown({keyCode:38});
+        //});
+        //
+        //$(document).bind("swipeDown" , function () {
+        //    alert("swipeDown");
+        //    this.onKeyDown({keyCode:39});
+        //});
+        //
+        //$(document).bind("swipeRight" , function () {
+        //    alert("swipeRight");
+        //    this.onKeyDown({keyCode:40});
+        //});
     };
     GameBoard.prototype.onKeyDown = function (event) {
         var undoWasPlayed = false;

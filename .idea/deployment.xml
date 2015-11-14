@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Local IIS" deleteMissingItems="true">
+    <serverData>
+      <paths name="Local IIS">
+        <serverdata>
+          <mappings>
+            <mapping deploy="mcf2048" local="$PROJECT_DIR$/www" web="mcf2048" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/hooks" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins" />
+            <excludedPath local="true" path="$PROJECT_DIR$/config.xml" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
