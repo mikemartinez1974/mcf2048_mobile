@@ -57,7 +57,7 @@
     <description>
         A clone of the game 2048.
     </description>
-    <author email="mike.d.martinez@gmail.com" href="http://phonegap.com">
+    <author email="mike.d.martinez@gmail.com" href="http://phonegap.com" >
         PhoneGap Team
     </author>
     <content src="index.html" />
